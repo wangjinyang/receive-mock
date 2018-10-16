@@ -1,0 +1,15 @@
+{
+	"UserInfo2": {
+		"url": "/user/info2",
+		"POST": {
+			"jsonPath": "POSTUserInfo2.json",
+			"updateTime": 1539690818669,
+			"size": 31
+		},
+		"GET": {
+			"jsonPath": "GETUserInfo2.json",
+			"updateTime": 1539690952886,
+			"size": 31
+		}
+	}
+}
