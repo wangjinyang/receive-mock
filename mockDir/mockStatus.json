@@ -11,5 +11,13 @@
 			"updateTime": 1539690952886,
 			"size": 31
 		}
+	},
+	"UserInfo3": {
+		"url": "/user/info3",
+		"GET": {
+			"jsonPath": "GETUserInfo3.json",
+			"updateTime": 1540459763790,
+			"size": 31
+		}
 	}
 }

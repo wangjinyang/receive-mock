@@ -27,7 +27,6 @@ router.all('*', function(req, res, next) {
         }
     }
     if (!mockStatus[pathName] || !mockStatus[pathName][method]) {
-        console.log(3333)
         mockStatus = util.updateMockStatus(mockStatus, pathName, content, contentStr, req.baseUrl, method);
     }
     else {

@@ -8,7 +8,8 @@ var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（�
 
 var mockStatusWriteFileTimer = null;
 
-var mockDataDir = config.mockDataStorageDir;
+var mockDataStorageDir = config.mockDataStorageDir;
+var mockDataDir = config.mockDataDir;
 
 var mockStatusStatusFile = config.mockStatusStatusFilePath;
 var mockDataMapFilePath = config.mockDataMapFilePath;
@@ -46,7 +47,7 @@ function updateMockStatus(mockStatus, pathName, content, contentStr, baseUrl, me
         updateTime: new Date().getTime(),
         size: contentStr.length || 0
     };
-    fs.writeFile(path.join(mockDataDir + jsonPath), contentStr, 'utf-8', function (err, data) {
+    fs.writeFile(path.join(mockDataStorageDir + jsonPath), contentStr, 'utf-8', function (err, data) {
         if (err) {
             console.log('error 创建文件失败，文件路径:' + jsonPath);
         }
@@ -75,7 +76,7 @@ function updateMockDataMap(mockStatus) {
             var tempObjUrl = tempObj[mockStatusItem['url']];
             itemKeys.forEach(function (itemKey) {
                 if (itemKey !== 'url') {
-                    tempObjUrl[itemKey] = mockStatusItem[itemKey]['jsonPath'];
+                    tempObjUrl[itemKey] = mockDataDir + mockStatusItem[itemKey]['jsonPath'];
                 }
             });
         }
